@@ -2,21 +2,23 @@
 
 #include "afxwin.h"
 
-class CMyStatic : public CStatic
-{
-public:
-	CMyStatic(void);
-	virtual ~CMyStatic(void);
+// CMyEdit
 
+class CMyEdit : public CEdit
+{
+	DECLARE_DYNAMIC(CMyEdit)
+
+public:
+	CMyEdit();
+	virtual ~CMyEdit();
+
+protected:
 	DECLARE_MESSAGE_MAP()
 
 private:
-	COLORREF m_rgbBackground, m_rgbText;
+	CBrush m_brushBkg;//背景画刷，绘画除字体外的背景，一般跟字体背景一样的样色
+	COLORREF m_rgbTextBackground, m_rgbText;
 	CFont m_font;
-	bool m_bSetBackgroundColor;//true则设置有颜色的背景，false则设置透明背景
-	
-private:
-	void MyDrawText(CDC* pDC, const CString& cstrText);
 
 public:
 	int MySetFont(int nHeight, // logical height of font height
@@ -34,11 +36,12 @@ public:
 		BYTE fdwPitchAndFamily, // pitch and family
 		LPCTSTR lpszFace // pointer to typeface name string
 		);
-	int SetBackGroundColor(COLORREF rgbBackground);
+	int SetBackGroundColor(COLORREF rgbTextBackground);
 	int SetFontColor(COLORREF rgbText);
-	int MySetWindowText(const CString& cstrText);
 
 public:
-	afx_msg void OnPaint();
+	afx_msg HBRUSH CtlColor(CDC* pDC, UINT nCtlColor);
+	afx_msg void OnNcPaint();
 };
+
 

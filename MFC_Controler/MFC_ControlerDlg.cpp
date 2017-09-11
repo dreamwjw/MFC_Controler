@@ -14,9 +14,6 @@
 
 // CMFC_ControlerDlg 对话框
 
-
-
-
 CMFC_ControlerDlg::CMFC_ControlerDlg(CWnd* pParent /*=NULL*/)
 	: CDialogEx(CMFC_ControlerDlg::IDD, pParent)
 {
@@ -32,10 +29,14 @@ BEGIN_MESSAGE_MAP(CMFC_ControlerDlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDC_BUTTON_STATIC, &CMFC_ControlerDlg::OnBnClickedButtonStatic)
+	ON_BN_CLICKED(IDC_BUTTON_EDIT, &CMFC_ControlerDlg::OnBnClickedButtonEdit)
+	ON_BN_CLICKED(IDC_BUTTON_RADIO, &CMFC_ControlerDlg::OnBnClickedButtonRadio)
+	ON_BN_CLICKED(IDC_BUTTON_COMBOBOX, &CMFC_ControlerDlg::OnBnClickedButtonCombobox)
 END_MESSAGE_MAP()
 
 
 // CMFC_ControlerDlg 消息处理程序
+
 
 BOOL CMFC_ControlerDlg::OnInitDialog()
 {
@@ -97,4 +98,24 @@ void CMFC_ControlerDlg::OnBnClickedButtonStatic()
 void CMFC_ControlerDlg::InitChildDlg()
 {
 	m_DlgStatic.Create(IDD_DLG_STATIC, this);
+	m_DlgEdit.Create(IDD_DLG_EDIT, this);
+	m_DlgRadio.Create(IDD_DLG_RADIO, this);
+	m_DlgComboBox.Create(IDD_DLG_COMBOBOX, this);
+}
+
+void CMFC_ControlerDlg::OnBnClickedButtonEdit()
+{
+	m_DlgEdit.ShowWindow(SW_SHOW);
+}
+
+
+void CMFC_ControlerDlg::OnBnClickedButtonRadio()
+{
+	m_DlgRadio.ShowWindow(SW_SHOW);
+}
+
+
+void CMFC_ControlerDlg::OnBnClickedButtonCombobox()
+{
+	m_DlgComboBox.ShowWindow(SW_SHOW);
 }

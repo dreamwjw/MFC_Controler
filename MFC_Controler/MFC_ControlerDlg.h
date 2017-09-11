@@ -5,6 +5,9 @@
 #pragma once
 
 #include "DlgStatic.h"
+#include "DlgEdit.h"
+#include "DlgRadio.h"
+#include "DlgComboBox.h"
 
 // CMFC_ControlerDlg ¶Ô»°¿ò
 class CMFC_ControlerDlg : public CDialogEx
@@ -32,10 +35,16 @@ protected:
 
 private:
 	CDlgStatic m_DlgStatic;
+	CDlgEdit m_DlgEdit;
+	CDlgRadio m_DlgRadio;
+	CDlgComboBox m_DlgComboBox;
 
 private:
 	void InitChildDlg();
 
 public:
 	afx_msg void OnBnClickedButtonStatic();
+	afx_msg void OnBnClickedButtonEdit();
+	afx_msg void OnBnClickedButtonRadio();
+	afx_msg void OnBnClickedButtonCombobox();
 };

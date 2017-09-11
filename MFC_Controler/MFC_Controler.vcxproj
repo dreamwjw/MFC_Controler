@@ -98,23 +98,40 @@
     <None Include="ReadMe.txt" />
     <None Include="res\MFC_Controler.ico" />
     <None Include="res\MFC_Controler.rc2" />
+    <None Include="res\Radio_Checked.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Controlers\JPGPicture.h" />
+    <ClInclude Include="Controlers\KbcBmp.h" />
+    <ClInclude Include="Controlers\MyEdit.h" />
     <ClInclude Include="Controlers\MyStatic.h" />
+    <ClInclude Include="DlgComboBox.h" />
+    <ClInclude Include="DlgEdit.h" />
+    <ClInclude Include="DlgRadio.h" />
     <ClInclude Include="DlgStatic.h" />
     <ClInclude Include="MFC_Controler.h" />
     <ClInclude Include="MFC_ControlerDlg.h" />
+    <ClInclude Include="MyRadio.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Controlers\JPGPicture.cpp" />
+    <ClCompile Include="Controlers\KbcBmp.cpp" />
+    <ClCompile Include="Controlers\MyEdit.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="Controlers\MyStatic.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="DlgComboBox.cpp" />
+    <ClCompile Include="DlgEdit.cpp" />
+    <ClCompile Include="DlgRadio.cpp" />
     <ClCompile Include="DlgStatic.cpp" />
     <ClCompile Include="MFC_Controler.cpp" />
     <ClCompile Include="MFC_ControlerDlg.cpp" />
+    <ClCompile Include="MyRadio.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

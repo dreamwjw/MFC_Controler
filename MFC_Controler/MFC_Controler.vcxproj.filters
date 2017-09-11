@@ -22,6 +22,9 @@
     <None Include="res\MFC_Controler.ico">
       <Filter>资源文件</Filter>
     </None>
+    <None Include="res\Radio_Checked.jpg">
+      <Filter>资源文件</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MFC_Controler.h">
@@ -45,6 +48,27 @@
     <ClInclude Include="Controlers\MyStatic.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="DlgEdit.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Controlers\MyEdit.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MyRadio.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Controlers\JPGPicture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Controlers\KbcBmp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgRadio.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgComboBox.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MFC_Controler.cpp">
@@ -60,6 +84,27 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Controlers\MyStatic.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgEdit.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Controlers\MyEdit.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MyRadio.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Controlers\JPGPicture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Controlers\KbcBmp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgRadio.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgComboBox.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

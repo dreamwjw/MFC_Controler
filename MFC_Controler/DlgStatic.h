@@ -21,6 +21,9 @@ protected:
 	DECLARE_MESSAGE_MAP()
 
 private:
+	CMyStatic m_MyStatic;
+
+private:
 	void InitDlg();
 	void InitControler();
 
@@ -28,7 +31,6 @@ private:
 	static UINT ThreadGetVideoData(LPVOID lpVoid);
 
 public:
-	CMyStatic m_MyStatic;
 	virtual BOOL OnInitDialog();
 	afx_msg void OnPaint();
 };
