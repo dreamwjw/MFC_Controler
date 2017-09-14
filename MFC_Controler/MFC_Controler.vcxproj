@@ -51,7 +51,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.\Controlers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\Controlers;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -96,14 +96,36 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
+    <None Include="res\bmpMouseDown.bmp" />
+    <None Include="res\bmpNormal.bmp" />
+    <None Include="res\Hscrolled_arrow_left.bmp" />
+    <None Include="res\Hscrolled_arrow_right.bmp" />
+    <None Include="res\Hscrolled_slider_center.bmp" />
+    <None Include="res\Hscrolled_slider_left.bmp" />
+    <None Include="res\Hscrolled_slider_middle.bmp" />
+    <None Include="res\Hscrolled_slider_right.bmp" />
+    <None Include="res\Hscrolled_trough.bmp" />
     <None Include="res\MFC_Controler.ico" />
     <None Include="res\MFC_Controler.rc2" />
     <None Include="res\Radio_Checked.jpg" />
+    <None Include="res\Radio_Unchecked.jpg" />
+    <None Include="res\Vscrolled_arrow_down.bmp" />
+    <None Include="res\Vscrolled_arrow_up_over.bmp" />
+    <None Include="res\Vscrolled_slider_bottom.bmp" />
+    <None Include="res\Vscrolled_slider_center.bmp" />
+    <None Include="res\Vscrolled_slider_middle.bmp" />
+    <None Include="res\Vscrolled_slider_top.bmp" />
+    <None Include="res\Vscrolled_trough.bmp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Controlers\ComboboxListboxDlg.h" />
     <ClInclude Include="Controlers\JPGPicture.h" />
     <ClInclude Include="Controlers\KbcBmp.h" />
+    <ClInclude Include="Controlers\MyComboBox.h" />
     <ClInclude Include="Controlers\MyEdit.h" />
+    <ClInclude Include="Controlers\MyListBox.h" />
+    <ClInclude Include="Controlers\MyRadio.h" />
+    <ClInclude Include="Controlers\MyScrollBar.h" />
     <ClInclude Include="Controlers\MyStatic.h" />
     <ClInclude Include="DlgComboBox.h" />
     <ClInclude Include="DlgEdit.h" />
@@ -111,17 +133,21 @@
     <ClInclude Include="DlgStatic.h" />
     <ClInclude Include="MFC_Controler.h" />
     <ClInclude Include="MFC_ControlerDlg.h" />
-    <ClInclude Include="MyRadio.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Controlers\ComboboxListboxDlg.cpp" />
     <ClCompile Include="Controlers\JPGPicture.cpp" />
     <ClCompile Include="Controlers\KbcBmp.cpp" />
+    <ClCompile Include="Controlers\MyComboBox.cpp" />
     <ClCompile Include="Controlers\MyEdit.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Controlers\MyListBox.cpp" />
+    <ClCompile Include="Controlers\MyRadio.cpp" />
+    <ClCompile Include="Controlers\MyScrollBar.cpp" />
     <ClCompile Include="Controlers\MyStatic.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
@@ -131,7 +157,6 @@
     <ClCompile Include="DlgStatic.cpp" />
     <ClCompile Include="MFC_Controler.cpp" />
     <ClCompile Include="MFC_ControlerDlg.cpp" />
-    <ClCompile Include="MyRadio.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

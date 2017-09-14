@@ -1,6 +1,7 @@
 #pragma once
 #include "afxwin.h"
 
+#include "MyComboBox.h"
 
 // CDlgComboBox ¶Ô»°¿ò
 
@@ -21,7 +22,7 @@ protected:
 	DECLARE_MESSAGE_MAP()
 
 private:
-	CComboBox m_ComboBox;
+	CMyComboBox m_Combobox;
 
 private:
 	void InitDlg();
@@ -30,4 +31,5 @@ private:
 public:
 	virtual BOOL OnInitDialog();
 	afx_msg void OnPaint();
+	
 };

@@ -22,11 +22,13 @@ protected:
 	DECLARE_MESSAGE_MAP()
 
 private:
+	CMyRadio m_Radio;
+
+private:
 	void InitDlg();
 	void InitControler();
 
 public:
-	CMyRadio m_Radio;
 	virtual BOOL OnInitDialog();
 	afx_msg void OnPaint();
 };

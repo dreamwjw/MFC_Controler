@@ -1,25 +1,33 @@
 #pragma once
 
 #include "afxwin.h"
+#include "MyScrollBar.h"
 
-class CMyStatic : public CStatic
+#define HANDLEMESSAGE WM_USER+1000
+enum{SETTEXT, NOACTIVE};
+
+class CMyListBox : public CListBox
 {
 public:
-	CMyStatic(void);
-	virtual ~CMyStatic(void);
+	CMyListBox(void);
+	virtual ~CMyListBox(void);
 
 	DECLARE_MESSAGE_MAP()
 
 private:
-	COLORREF m_rgbBackground, m_rgbText;
+	CMyScrollBar    m_HScroll;
+	CMyScrollBar    m_VScroll;
+	int m_nItemHeight;
+	CString m_szCheck;
+	CDialog* m_plistboxdlg;
+	COLORREF m_rgbLine;
+	CStatic* m_pStatic;
 	CFont m_font;
-	bool m_bSetBackgroundColor;//true则设置有颜色的背景，false则设置透明背景
-	
-private:
-	void MyDrawText(CDC* pDC, const CString& cstrText);
 
 public:
-	int MySetFont(CFont& font);
+	void Init(CStatic* pStatic, CDialog* pDialog);
+	void MyAddString(LPCTSTR lpszItem);
+	void MySetItemHeight(int nItemHeight);
 	int MySetFont(int nHeight = 20, // logical height of font height
 		int nWidth = 10, // logical average character width
 		int nEscapement = 0, // angle of escapement
@@ -35,11 +43,12 @@ public:
 		BYTE fdwPitchAndFamily = FF_MODERN, // pitch and family
 		LPCTSTR lpszFace = "宋体"// pointer to typeface name string
 		);
-	int SetBackGroundColor(COLORREF rgbBackground);
-	int SetFontColor(COLORREF rgbText);
-	int MySetWindowText(const CString& cstrText);
 
 public:
-	afx_msg void OnPaint();
+	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
+	afx_msg void OnDrawItem(int nIDCtl, LPDRAWITEMSTRUCT lpDrawItemStruct);
+	afx_msg void OnMouseMove(UINT nFlags, CPoint point);
+	virtual void PreSubclassWindow();
+	virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
 };
 

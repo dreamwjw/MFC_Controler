@@ -25,6 +25,57 @@
     <None Include="res\Radio_Checked.jpg">
       <Filter>资源文件</Filter>
     </None>
+    <None Include="res\Hscrolled_arrow_left.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Hscrolled_arrow_right.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Hscrolled_slider_center.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Hscrolled_slider_left.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Hscrolled_slider_middle.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Hscrolled_slider_right.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Hscrolled_trough.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Vscrolled_arrow_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Vscrolled_arrow_up_over.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Vscrolled_slider_bottom.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Vscrolled_slider_center.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Vscrolled_slider_middle.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Vscrolled_slider_top.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Vscrolled_trough.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\bmpMouseDown.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\bmpNormal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Radio_Unchecked.jpg">
+      <Filter>资源文件</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MFC_Controler.h">
@@ -54,9 +105,6 @@
     <ClInclude Include="Controlers\MyEdit.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="MyRadio.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="Controlers\JPGPicture.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -67,6 +115,21 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="DlgComboBox.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Controlers\ComboboxListboxDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Controlers\MyListBox.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Controlers\MyRadio.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Controlers\MyScrollBar.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Controlers\MyComboBox.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -92,9 +155,6 @@
     <ClCompile Include="Controlers\MyEdit.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="MyRadio.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="Controlers\JPGPicture.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -105,6 +165,21 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="DlgComboBox.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Controlers\ComboboxListboxDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Controlers\MyListBox.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Controlers\MyRadio.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Controlers\MyScrollBar.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Controlers\MyComboBox.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

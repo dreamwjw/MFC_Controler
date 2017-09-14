@@ -1,25 +1,38 @@
 #pragma once
-
 #include "afxwin.h"
+#include "resource.h"
+#include "MyListBox.h"
 
-class CMyStatic : public CStatic
+// CComboboxListboxDlg 对话框
+
+class CComboboxListboxDlg : public CDialogEx
 {
+	DECLARE_DYNAMIC(CComboboxListboxDlg)
+
 public:
-	CMyStatic(void);
-	virtual ~CMyStatic(void);
+	CComboboxListboxDlg(CWnd* pParent = NULL);   // 标准构造函数
+	virtual ~CComboboxListboxDlg();
+
+// 对话框数据
+	enum { IDD = IDD_DLG_CBLISTBOX };
+
+protected:
+	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持
 
 	DECLARE_MESSAGE_MAP()
 
 private:
-	COLORREF m_rgbBackground, m_rgbText;
-	CFont m_font;
-	bool m_bSetBackgroundColor;//true则设置有颜色的背景，false则设置透明背景
-	
+	CStatic* m_pStatic;
+	CMyListBox m_ListBox;
+	CBrush m_brush;//绘画ListBox非Item的背景颜色
+
 private:
-	void MyDrawText(CDC* pDC, const CString& cstrText);
+	void MoveControler();
 
 public:
-	int MySetFont(CFont& font);
+	void MyAddString(LPCTSTR lpszItem);
+	void Init(CStatic* pStatic);
+	void MySetItemHeight(int nItemHeight);
 	int MySetFont(int nHeight = 20, // logical height of font height
 		int nWidth = 10, // logical average character width
 		int nEscapement = 0, // angle of escapement
@@ -35,11 +48,10 @@ public:
 		BYTE fdwPitchAndFamily = FF_MODERN, // pitch and family
 		LPCTSTR lpszFace = "宋体"// pointer to typeface name string
 		);
-	int SetBackGroundColor(COLORREF rgbBackground);
-	int SetFontColor(COLORREF rgbText);
-	int MySetWindowText(const CString& cstrText);
 
 public:
-	afx_msg void OnPaint();
+	afx_msg void OnActivate(UINT nState, CWnd* pWndOther, BOOL bMinimized);
+	afx_msg void OnSize(UINT nType, int cx, int cy);
+	
+	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
 };
-

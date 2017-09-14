@@ -6,7 +6,6 @@
 #include "DlgComboBox.h"
 #include "afxdialogex.h"
 
-
 // CDlgComboBox ¶Ô»°¿ò
 
 IMPLEMENT_DYNAMIC(CDlgComboBox, CDialogEx)
@@ -24,7 +23,7 @@ CDlgComboBox::~CDlgComboBox()
 void CDlgComboBox::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
-	DDX_Control(pDX, IDC_COMBO1, m_ComboBox);
+	DDX_Control(pDX, IDC_STATIC_COMBOBOX, m_Combobox);
 }
 
 
@@ -71,7 +70,15 @@ void CDlgComboBox::InitControler()
 	int nStatic_Height = nDlgHeight/10*2;
 	int nStatic_X = (nDlgWidth - nStatic_Width)/2;
 	int nStatic_Y = (nDlgHeight - nStatic_Height)/2;
-	m_ComboBox.MoveWindow(nStatic_X, nStatic_Y, nStatic_Width, nStatic_Height);
+	m_Combobox.MoveWindow(nStatic_X, nStatic_Y, nStatic_Width, nStatic_Height);
+	m_Combobox.Init();
+	m_Combobox.MySetItemHeight(nStatic_Height);
+	CString cstrText;
+	for(int i = 0; i < 5; i++)
+	{
+		cstrText.Format("test%d", i);
+		m_Combobox.MyAddString(cstrText);
+	}
 }
 
 void CDlgComboBox::OnPaint()

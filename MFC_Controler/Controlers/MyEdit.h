@@ -4,6 +4,8 @@
 
 // CMyEdit
 
+//MyEdit需要编辑控件是无边框
+
 class CMyEdit : public CEdit
 {
 	DECLARE_DYNAMIC(CMyEdit)
@@ -21,20 +23,21 @@ private:
 	CFont m_font;
 
 public:
-	int MySetFont(int nHeight, // logical height of font height
-		int nWidth, // logical average character width
-		int nEscapement, // angle of escapement
-		int nOrientation, // base-line orientation angle
-		int fnWeight, // font weight
-		BYTE fdwItalic, // italic attribute flag
-		BYTE fdwUnderline, // underline attribute flag
-		BYTE fdwStrikeOut, // strikeout attribute flag
-		BYTE fdwCharSet, // character set identifier
-		BYTE fdwOutputPrecision, // output precision
-		BYTE fdwClipPrecision, // clipping precision
-		BYTE fdwQuality, // output quality
-		BYTE fdwPitchAndFamily, // pitch and family
-		LPCTSTR lpszFace // pointer to typeface name string
+	int MySetFont(CFont& font);
+	int MySetFont(int nHeight = 20, // logical height of font height
+		int nWidth = 10, // logical average character width
+		int nEscapement = 0, // angle of escapement
+		int nOrientation = 0, // base-line orientation angle
+		int fnWeight = FW_NORMAL, // font weight
+		BYTE fdwItalic = FALSE, // italic attribute flag
+		BYTE fdwUnderline = FALSE, // underline attribute flag
+		BYTE fdwStrikeOut = FALSE, // strikeout attribute flag
+		BYTE fdwCharSet = ANSI_CHARSET, // character set identifier
+		BYTE fdwOutputPrecision = OUT_CHARACTER_PRECIS, // output precision
+		BYTE fdwClipPrecision = CLIP_CHARACTER_PRECIS, // clipping precision
+		BYTE fdwQuality = DEFAULT_QUALITY, // output quality
+		BYTE fdwPitchAndFamily = FF_MODERN, // pitch and family
+		LPCTSTR lpszFace = "宋体"// pointer to typeface name string
 		);
 	int SetBackGroundColor(COLORREF rgbTextBackground);
 	int SetFontColor(COLORREF rgbText);

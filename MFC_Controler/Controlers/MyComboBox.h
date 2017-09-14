@@ -1,25 +1,38 @@
 #pragma once
 
-#include "afxwin.h"
+#include "ComboboxListboxDlg.h"
 
-class CMyStatic : public CStatic
+// CMyComboBox
+
+class CMyComboBox : public CStatic
 {
-public:
-	CMyStatic(void);
-	virtual ~CMyStatic(void);
+	DECLARE_DYNAMIC(CMyComboBox)
 
+public:
+	CMyComboBox();
+	virtual ~CMyComboBox();
+
+protected:
 	DECLARE_MESSAGE_MAP()
 
 private:
-	COLORREF m_rgbBackground, m_rgbText;
+	unsigned char m_ucStatus;
+	enum{NORMAL, MOUSEDOWN};
+	CBitmap m_cbmpMouseDown, m_cbmpNormal;
+	BITMAP m_bmpMouseDown, m_bmpNormal;
+	CComboboxListboxDlg m_listboxdlg;
+	CString m_cstrText;
 	CFont m_font;
-	bool m_bSetBackgroundColor;//true则设置有颜色的背景，false则设置透明背景
-	
+	int nRowCount;//下拉框显示多少行
+	COLORREF m_rgbText;
+
 private:
-	void MyDrawText(CDC* pDC, const CString& cstrText);
+	//绘图
+	void DrawBk(CDC& dc,int nIndex);
 
 public:
-	int MySetFont(CFont& font);
+	void MyAddString(LPCTSTR lpszItem);
+	void Init();
 	int MySetFont(int nHeight = 20, // logical height of font height
 		int nWidth = 10, // logical average character width
 		int nEscapement = 0, // angle of escapement
@@ -35,11 +48,20 @@ public:
 		BYTE fdwPitchAndFamily = FF_MODERN, // pitch and family
 		LPCTSTR lpszFace = "宋体"// pointer to typeface name string
 		);
-	int SetBackGroundColor(COLORREF rgbBackground);
+	CString& MyGetString();
+	void MySetItemHeight(int nItemHeight);
+	void MySetString(LPCTSTR lpszItem);
 	int SetFontColor(COLORREF rgbText);
-	int MySetWindowText(const CString& cstrText);
 
 public:
+	//自定义消息
+	LRESULT HandleMessage(WPARAM wParam, LPARAM lParam);
+
+public:
+	virtual void PreSubclassWindow();
 	afx_msg void OnPaint();
+	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
+	afx_msg void OnStnClicked();
 };
+
 

@@ -1,24 +1,32 @@
 #pragma once
 
-#include "afxwin.h"
+#include "KbcBmp.h"
 
-class CMyStatic : public CStatic
+//自定义消息
+#define       MYUNCHECKED      WM_USER + 1200
+
+// CMyRadio
+
+class CMyRadio : public CButton
 {
-public:
-	CMyStatic(void);
-	virtual ~CMyStatic(void);
+	DECLARE_DYNAMIC(CMyRadio)
 
+public:
+	CMyRadio();
+	virtual ~CMyRadio();
+
+protected:
 	DECLARE_MESSAGE_MAP()
 
 private:
-	COLORREF m_rgbBackground, m_rgbText;
 	CFont m_font;
-	bool m_bSetBackgroundColor;//true则设置有颜色的背景，false则设置透明背景
-	
-private:
-	void MyDrawText(CDC* pDC, const CString& cstrText);
+	COLORREF m_rgbText, m_rgbMask;
+	CKbcBmp m_ImgChecked, m_ImgUnchecked;
+	bool m_bChecked;
+	UINT m_nIDRadio;
 
 public:
+	BOOL LoadBitmaps(UINT nIDBitmapChecked, UINT nIDBitmapUnchecked);
 	int MySetFont(CFont& font);
 	int MySetFont(int nHeight = 20, // logical height of font height
 		int nWidth = 10, // logical average character width
@@ -35,11 +43,19 @@ public:
 		BYTE fdwPitchAndFamily = FF_MODERN, // pitch and family
 		LPCTSTR lpszFace = "宋体"// pointer to typeface name string
 		);
-	int SetBackGroundColor(COLORREF rgbBackground);
+	void MySetCheck(bool bChecked = true);
 	int SetFontColor(COLORREF rgbText);
-	int MySetWindowText(const CString& cstrText);
+	void SetRadioID(UINT nIDRadio);
 
 public:
-	afx_msg void OnPaint();
+	//自定义消息
+	LRESULT MyUnChecked(WPARAM wParam, LPARAM lParam);
+	
+public:
+	virtual void PreSubclassWindow();
+	afx_msg HBRUSH CtlColor(CDC* pDC, UINT nCtlColor);
+	virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
+	afx_msg void OnBnClicked();
 };
+
 

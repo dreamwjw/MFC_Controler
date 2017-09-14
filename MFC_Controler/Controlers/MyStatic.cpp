@@ -53,25 +53,33 @@ void CMyStatic::MyDrawText(CDC* pDC, const CString& cstrText)
 
 	//»æ»­ÎÄ±¾ 
 	CRect rc;
-	GetClientRect(&rc);
-	pDC->FillSolidRect(rc, m_rgbBackground);
-	pDC->TextOut(rc.left, rc.top, cstrText);
+	GetClientRect(rc);
+	LOGFONT lg;
+	m_font.GetLogFont(&lg);
+	pDC->TextOut(rc.left, (rc.Height()-lg.lfHeight)/2, cstrText);
 }
 
-int CMyStatic::MySetFont(int nHeight = 20, // logical height of font height
-	int nWidth = 10, // logical average character width
-	int nEscapement = 0, // angle of escapement
-	int nOrientation = 0, // base-line orientation angle
-	int fnWeight = FW_NORMAL, // font weight
-	BYTE fdwItalic = FALSE, // italic attribute flag
-	BYTE fdwUnderline = FALSE, // underline attribute flag
-	BYTE fdwStrikeOut = FALSE, // strikeout attribute flag
-	BYTE fdwCharSet = ANSI_CHARSET, // character set identifier
-	BYTE fdwOutputPrecision = OUT_CHARACTER_PRECIS, // output precision
-	BYTE fdwClipPrecision = CLIP_CHARACTER_PRECIS, // clipping precision
-	BYTE fdwQuality = DEFAULT_QUALITY, // output quality
-	BYTE fdwPitchAndFamily = FF_MODERN, // pitch and family
-	LPCTSTR lpszFace = "ËÎÌå"// pointer to typeface name string
+int CMyStatic::MySetFont(CFont& font)
+{
+	m_font.Attach(font);
+
+	return 0;
+}
+
+int CMyStatic::MySetFont(int nHeight, // logical height of font height
+	int nWidth, // logical average character width
+	int nEscapement, // angle of escapement
+	int nOrientation, // base-line orientation angle
+	int fnWeight, // font weight
+	BYTE fdwItalic, // italic attribute flag
+	BYTE fdwUnderline, // underline attribute flag
+	BYTE fdwStrikeOut, // strikeout attribute flag
+	BYTE fdwCharSet, // character set identifier
+	BYTE fdwOutputPrecision, // output precision
+	BYTE fdwClipPrecision, // clipping precision
+	BYTE fdwQuality, // output quality
+	BYTE fdwPitchAndFamily, // pitch and family
+	LPCTSTR lpszFace // pointer to typeface name string
 	)
 {
 	m_font.DeleteObject();

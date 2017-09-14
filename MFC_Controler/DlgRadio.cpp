@@ -61,7 +61,7 @@ void CDlgRadio::InitControler()
 	int nStatic_Y = (nDlgHeight - nStatic_Height)/2;
 	m_Radio.MoveWindow(nStatic_X, nStatic_Y, nStatic_Width, nStatic_Height);
 	m_Radio.SetWindowText("test");
-	m_Radio.LoadBitmaps(IDR_RADIO_CHECKED);
+	m_Radio.LoadBitmaps(IDR_RADIO_CHECKED, IDR_RADIO_UNCHECKED);
 }
 
 BOOL CDlgRadio::OnInitDialog()
