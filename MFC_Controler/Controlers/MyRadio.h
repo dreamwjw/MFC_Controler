@@ -58,4 +58,6 @@ public:
 	afx_msg void OnBnClicked();
 };
 
-
+//使用须知
+//1、重绘的控件是按钮而不是单选按钮
+//2、点击时需要调用MySetCheck(false)将同组的Radio置于UnChecked状态

@@ -128,6 +128,7 @@
     <ClInclude Include="Controlers\MyScrollBar.h" />
     <ClInclude Include="Controlers\MyStatic.h" />
     <ClInclude Include="DlgComboBox.h" />
+    <ClInclude Include="DlgDate.h" />
     <ClInclude Include="DlgEdit.h" />
     <ClInclude Include="DlgRadio.h" />
     <ClInclude Include="DlgStatic.h" />
@@ -152,6 +153,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="DlgComboBox.cpp" />
+    <ClCompile Include="DlgDate.cpp" />
     <ClCompile Include="DlgEdit.cpp" />
     <ClCompile Include="DlgRadio.cpp" />
     <ClCompile Include="DlgStatic.cpp" />

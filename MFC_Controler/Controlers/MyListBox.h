@@ -52,3 +52,7 @@ public:
 	virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
 };
 
+//使用须知
+//1、如果是配合MyComboBox使用，则需要调用Init初始化
+//2、调用MyAddString添加行而不是AddString，调用MySetItemHeight设置行高
+

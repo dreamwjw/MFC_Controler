@@ -34,8 +34,10 @@ void CMyListBox::OnLButtonDown(UINT nFlags, CPoint point)
 	if(nCount > 0)
 	{
 		GetText(GetCurSel(), cstrText);
-		m_plistboxdlg->ShowWindow(SW_HIDE);
-		m_pStatic->SendMessage(HANDLEMESSAGE, SETTEXT, (WPARAM)&cstrText);
+		if(m_plistboxdlg != NULL)
+			m_plistboxdlg->ShowWindow(SW_HIDE);
+		if(m_pStatic != NULL)
+			m_pStatic->SendMessage(HANDLEMESSAGE, SETTEXT, (WPARAM)&cstrText);
 	}
 
 	CListBox::OnLButtonDown(nFlags, point);

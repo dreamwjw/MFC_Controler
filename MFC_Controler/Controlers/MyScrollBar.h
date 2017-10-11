@@ -59,3 +59,8 @@ private:
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_VMCUBASESCROLLBAR_H__EB442742_EC74_4F6F_94FA_7833E431C59A__INCLUDED_)
+
+//使用须知
+//1、在所属类的PreSubclassWindow调用InitScrollBar，例如InitScrollBar(this,SB_HORZ,0)
+//2、在所属类的OnPaint或者DrawItem调用UpdateScrollBar
+//3、貌似树控件的水平滚动条有问题，当文本超出一定范围才显示出来，长度估算有问题

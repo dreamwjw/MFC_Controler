@@ -43,3 +43,5 @@ public:
 	afx_msg void OnPaint();
 };
 
+//使用须知
+//1、修改静态框的文本时不用SetWindowText而用MySetWindowText，否则文本修改后没有绘画出来

@@ -132,6 +132,9 @@
     <ClInclude Include="Controlers\MyComboBox.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="DlgDate.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MFC_Controler.cpp">
@@ -180,6 +183,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Controlers\MyComboBox.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgDate.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

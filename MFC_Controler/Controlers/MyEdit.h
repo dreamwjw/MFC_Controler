@@ -4,8 +4,6 @@
 
 // CMyEdit
 
-//MyEdit需要编辑控件是无边框
-
 class CMyEdit : public CEdit
 {
 	DECLARE_DYNAMIC(CMyEdit)
@@ -47,4 +45,5 @@ public:
 	afx_msg void OnNcPaint();
 };
 
-
+//使用须知
+//1、MyEdit需要编辑控件是无边框，即将Border属性设置为false

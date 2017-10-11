@@ -60,11 +60,12 @@ void CMyRadio::DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct)
 {
 	CDC* pDC = CDC::FromHandle(lpDrawItemStruct->hDC);
 	CRect rcItem(lpDrawItemStruct->rcItem);
+	int nHeight = rcItem.Height();
 
-	m_ImgChecked.SetBTHeight(rcItem.Height());
-	m_ImgChecked.SetBTWidth(rcItem.Width()/4);
-	m_ImgUnchecked.SetBTHeight(rcItem.Height());
-	m_ImgUnchecked.SetBTWidth(rcItem.Width()/4);
+	m_ImgChecked.SetBTHeight(nHeight);
+	m_ImgChecked.SetBTWidth(nHeight);
+	m_ImgUnchecked.SetBTHeight(nHeight);
+	m_ImgUnchecked.SetBTWidth(nHeight);
 	if(m_bChecked)
 	{
 		m_ImgChecked.Draw(pDC,0,0,0,m_rgbMask);
@@ -81,7 +82,7 @@ void CMyRadio::DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct)
 	pDC->SetTextColor(m_rgbText);
 	LOGFONT lg;
 	m_font.GetLogFont(&lg);
-	pDC->TextOut(rcItem.Width()/4, (rcItem.Height()-lg.lfHeight)/2, cstrText);
+	pDC->TextOut(nHeight, (nHeight-lg.lfHeight)/2, cstrText);
 }
 
 BOOL CMyRadio::LoadBitmaps(UINT nIDBitmapChecked, UINT nIDBitmapUnchecked)

@@ -64,4 +64,9 @@ public:
 	afx_msg void OnStnClicked();
 };
 
-
+//使用须知
+//1、继承CStatic，静态框控件必须激活点击事件，即将Notify属性设为True
+//2、该组合框是Drop List而不是DropDown，DropDown的组合框重绘更复杂
+//2、需要配合MyListBox和ComboboxListBoxDlg使用
+//3、需要调用Init初始化
+//4、获取文本调用MyGetString而不是GetItemText
