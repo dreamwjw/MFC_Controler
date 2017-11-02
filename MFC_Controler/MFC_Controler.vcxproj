@@ -132,6 +132,7 @@
     <ClInclude Include="DlgEdit.h" />
     <ClInclude Include="DlgRadio.h" />
     <ClInclude Include="DlgStatic.h" />
+    <ClInclude Include="DlgTree.h" />
     <ClInclude Include="MFC_Controler.h" />
     <ClInclude Include="MFC_ControlerDlg.h" />
     <ClInclude Include="Resource.h" />
@@ -157,6 +158,7 @@
     <ClCompile Include="DlgEdit.cpp" />
     <ClCompile Include="DlgRadio.cpp" />
     <ClCompile Include="DlgStatic.cpp" />
+    <ClCompile Include="DlgTree.cpp" />
     <ClCompile Include="MFC_Controler.cpp" />
     <ClCompile Include="MFC_ControlerDlg.cpp" />
     <ClCompile Include="stdafx.cpp">

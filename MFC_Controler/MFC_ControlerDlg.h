@@ -8,6 +8,7 @@
 #include "DlgEdit.h"
 #include "DlgRadio.h"
 #include "DlgComboBox.h"
+#include "DlgTree.h"
 
 // CMFC_ControlerDlg ¶Ô»°¿ò
 class CMFC_ControlerDlg : public CDialogEx
@@ -38,6 +39,7 @@ private:
 	CDlgEdit m_DlgEdit;
 	CDlgRadio m_DlgRadio;
 	CDlgComboBox m_DlgComboBox;
+	CDlgTree m_DlgTree;
 
 private:
 	void InitChildDlg();
@@ -47,4 +49,5 @@ public:
 	afx_msg void OnBnClickedButtonEdit();
 	afx_msg void OnBnClickedButtonRadio();
 	afx_msg void OnBnClickedButtonCombobox();
+	afx_msg void OnBnClickedButtonTree();
 };

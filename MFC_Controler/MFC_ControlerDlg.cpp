@@ -32,6 +32,7 @@ BEGIN_MESSAGE_MAP(CMFC_ControlerDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON_EDIT, &CMFC_ControlerDlg::OnBnClickedButtonEdit)
 	ON_BN_CLICKED(IDC_BUTTON_RADIO, &CMFC_ControlerDlg::OnBnClickedButtonRadio)
 	ON_BN_CLICKED(IDC_BUTTON_COMBOBOX, &CMFC_ControlerDlg::OnBnClickedButtonCombobox)
+	ON_BN_CLICKED(IDC_BUTTON_TREE, &CMFC_ControlerDlg::OnBnClickedButtonTree)
 END_MESSAGE_MAP()
 
 
@@ -101,6 +102,7 @@ void CMFC_ControlerDlg::InitChildDlg()
 	m_DlgEdit.Create(IDD_DLG_EDIT, this);
 	m_DlgRadio.Create(IDD_DLG_RADIO, this);
 	m_DlgComboBox.Create(IDD_DLG_COMBOBOX, this);
+	m_DlgTree.Create(IDD_DLG_TREE, this);
 }
 
 void CMFC_ControlerDlg::OnBnClickedButtonEdit()
@@ -118,4 +120,10 @@ void CMFC_ControlerDlg::OnBnClickedButtonRadio()
 void CMFC_ControlerDlg::OnBnClickedButtonCombobox()
 {
 	m_DlgComboBox.ShowWindow(SW_SHOW);
+}
+
+
+void CMFC_ControlerDlg::OnBnClickedButtonTree()
+{
+	m_DlgTree.ShowWindow(SW_SHOW);
 }
