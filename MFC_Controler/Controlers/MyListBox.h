@@ -24,6 +24,9 @@ private:
 	CStatic* m_pStatic;
 	CFont m_font;
 
+private:
+	void RefushHorizontalScrollBar();
+
 public:
 	void Init(CStatic* pStatic, CDialog* pDialog);
 	void MyAddString(LPCTSTR lpszItem);

@@ -48,5 +48,8 @@ BOOL CDlgTree::OnInitDialog()
 
 void CDlgTree::InitTree()
 {
-	m_Tree.InsertItem("123456789123456789123456789");
+	HTREEITEM hRoot = m_Tree.InsertItem("123456789123456789123456789123456789");
+
+	for(int i = 0; i < 20; i++)
+		m_Tree.InsertItem("test", hRoot);
 }

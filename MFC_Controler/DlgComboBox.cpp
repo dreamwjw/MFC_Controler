@@ -43,6 +43,8 @@ BOOL CDlgComboBox::OnInitDialog()
 	InitDlg();
 	InitControler();
 
+	SetDlgItemText(IDC_TEST, "testestsetsetestsetsetsetsetes");
+
 	return TRUE;  // return TRUE unless you set the focus to a control
 	// 异常: OCX 属性页应返回 FALSE
 }
@@ -76,7 +78,7 @@ void CDlgComboBox::InitControler()
 	CString cstrText;
 	for(int i = 0; i < 5; i++)
 	{
-		cstrText.Format("test%d", i);
+		cstrText.Format("testtesttest%d", i);
 		m_Combobox.MyAddString(cstrText);
 	}
 }
@@ -89,5 +91,5 @@ void CDlgComboBox::OnPaint()
 
 	CRect rect;
 	GetClientRect(rect);
-	dc.FillSolidRect(rect, RGB(255,0,0));
+	//dc.FillSolidRect(rect, RGB(255,0,0));
 }

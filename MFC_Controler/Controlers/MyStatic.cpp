@@ -7,9 +7,9 @@ CMyStatic::CMyStatic(void)
 		ANSI_CHARSET,OUT_CHARACTER_PRECIS,
 		CLIP_CHARACTER_PRECIS,DEFAULT_QUALITY,
 		FF_MODERN,"ËÎÌו");
-	 m_rgbBackground = RGB(255,0,0);
+	 m_rgbBackground = RGB(0,255,0);
 	 m_rgbText = RGB(0,0,0);
-	 m_bSetBackgroundColor = false;
+	 m_bSetBackgroundColor = true;
 }
 
 CMyStatic::~CMyStatic(void)
@@ -56,7 +56,8 @@ void CMyStatic::MyDrawText(CDC* pDC, const CString& cstrText)
 	GetClientRect(rc);
 	LOGFONT lg;
 	m_font.GetLogFont(&lg);
-	pDC->TextOut(rc.left, (rc.Height()-lg.lfHeight)/2, cstrText);
+	//pDC->TextOut(rc.left, (rc.Height()-lg.lfHeight)/2, cstrText);
+	pDC->DrawText(cstrText, rc, DT_LEFT|DT_VCENTER|DT_SINGLELINE); 
 }
 
 int CMyStatic::MySetFont(CFont& font)

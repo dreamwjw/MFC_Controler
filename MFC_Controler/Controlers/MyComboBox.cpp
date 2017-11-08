@@ -67,7 +67,9 @@ void CMyComboBox::DrawBk(CDC& dc,int nIndex)
 	dc.SetBkMode(TRANSPARENT);
 	LOGFONT lg;
 	m_font.GetLogFont(&lg);
-	dc.TextOut(5, (nHeight-lg.lfHeight)/2, m_cstrText);
+	//dc.TextOut(5, (nHeight-lg.lfHeight)/2, m_cstrText);
+	CRect rc(0,0,nWidth,nHeight);
+	dc.DrawText(m_cstrText, rc, DT_LEFT|DT_VCENTER|DT_SINGLELINE); 
 }
 
 void CMyComboBox::MyAddString(LPCTSTR lpszItem)

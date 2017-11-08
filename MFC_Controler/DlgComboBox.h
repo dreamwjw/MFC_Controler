@@ -31,5 +31,4 @@ private:
 public:
 	virtual BOOL OnInitDialog();
 	afx_msg void OnPaint();
-	
 };

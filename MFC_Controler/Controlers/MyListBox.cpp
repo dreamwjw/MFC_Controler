@@ -140,13 +140,25 @@ void CMyListBox::Init(CStatic* pStatic, CDialog* pDialog)
 
 void CMyListBox::MyAddString(LPCTSTR lpszItem)
 {
+	if(this->GetSafeHwnd() == NULL)
+		return;
+
 	int nItem = AddString(lpszItem);
 	SetItemHeight(nItem, m_nItemHeight);
+
+	//计算水平滚动条宽度
+	RefushHorizontalScrollBar();
 }
 
 void CMyListBox::MySetItemHeight(int nItemHeight)
 {
-	m_nItemHeight = nItemHeight;
+	if(m_nItemHeight == 0)
+	{
+		m_nItemHeight = nItemHeight;
+		int nSize = GetCount();
+		for(int i = 0; i < nSize; i++)
+			SetItemHeight(i, m_nItemHeight);
+	}
 }
 
 int CMyListBox::MySetFont(int nHeight, // logical height of font height
@@ -171,4 +183,31 @@ int CMyListBox::MySetFont(int nHeight, // logical height of font height
 		fdwCharSet,fdwOutputPrecision,fdwClipPrecision,fdwQuality,fdwPitchAndFamily,lpszFace);
 
 	return 0;
+}
+
+void CMyListBox::RefushHorizontalScrollBar()
+{
+	CDC *pDC = GetDC();
+	if (NULL == pDC)
+	{
+		return;
+	}
+	int nCount = GetCount();
+	if ( nCount < 1 )
+	{
+		SetHorizontalExtent(0);
+		return;
+	}
+	int nMaxExtent = 0;
+	CString szText;
+	for (int i = 0; i < nCount; ++i)
+	{
+		GetText(i, szText);
+		CSize &cs = pDC->GetTextExtent(szText);
+		if ( cs.cx > nMaxExtent )
+		{
+			nMaxExtent = cs.cx;
+		}
+	}
+	SetHorizontalExtent(nMaxExtent);
 }
