@@ -127,17 +127,26 @@
     <ClInclude Include="Controlers\MyRadio.h" />
     <ClInclude Include="Controlers\MyScrollBar.h" />
     <ClInclude Include="Controlers\MyStatic.h" />
+    <ClInclude Include="DlgCheckBox.h" />
     <ClInclude Include="DlgComboBox.h" />
     <ClInclude Include="DlgDate.h" />
     <ClInclude Include="DlgEdit.h" />
+    <ClInclude Include="DlgMeta.h" />
+    <ClInclude Include="DlgMutiEdit.h" />
     <ClInclude Include="DlgRadio.h" />
+    <ClInclude Include="DlgScrollBar.h" />
     <ClInclude Include="DlgStatic.h" />
+    <ClInclude Include="DlgTimeAxisCtrl.h" />
     <ClInclude Include="DlgTree.h" />
+    <ClInclude Include="MFCScrollBar.h" />
     <ClInclude Include="MFC_Controler.h" />
     <ClInclude Include="MFC_ControlerDlg.h" />
+    <ClInclude Include="MyCheckBox.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="SkinScrollBar.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="TimeAxisCtrl.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Controlers\ComboboxListboxDlg.cpp" />
@@ -153,18 +162,29 @@
     <ClCompile Include="Controlers\MyStatic.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="DlgCheckBox.cpp" />
     <ClCompile Include="DlgComboBox.cpp" />
     <ClCompile Include="DlgDate.cpp" />
     <ClCompile Include="DlgEdit.cpp" />
+    <ClCompile Include="DlgMeta.cpp" />
+    <ClCompile Include="DlgMutiEdit.cpp" />
     <ClCompile Include="DlgRadio.cpp" />
+    <ClCompile Include="DlgScrollBar.cpp" />
     <ClCompile Include="DlgStatic.cpp" />
+    <ClCompile Include="DlgTimeAxisCtrl.cpp" />
     <ClCompile Include="DlgTree.cpp" />
+    <ClCompile Include="MFCScrollBar.cpp" />
     <ClCompile Include="MFC_Controler.cpp" />
     <ClCompile Include="MFC_ControlerDlg.cpp" />
+    <ClCompile Include="MyCheckBox.cpp" />
+    <ClCompile Include="SkinScrollBar.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="TimeAxisCtrl.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MFC_Controler.rc" />

@@ -7,6 +7,9 @@
 #include "MFC_ControlerDlg.h"
 #include "afxdialogex.h"
 
+#include "DlgMutiEdit.h"
+#include "DlgTimeAxisCtrl.h"
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -33,6 +36,11 @@ BEGIN_MESSAGE_MAP(CMFC_ControlerDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON_RADIO, &CMFC_ControlerDlg::OnBnClickedButtonRadio)
 	ON_BN_CLICKED(IDC_BUTTON_COMBOBOX, &CMFC_ControlerDlg::OnBnClickedButtonCombobox)
 	ON_BN_CLICKED(IDC_BUTTON_TREE, &CMFC_ControlerDlg::OnBnClickedButtonTree)
+	ON_BN_CLICKED(IDC_BUTTON_SCROLLBAR, &CMFC_ControlerDlg::OnBnClickedButtonScrollbar)
+	ON_BN_CLICKED(IDC_BUTTON_META, &CMFC_ControlerDlg::OnBnClickedButtonMeta)
+	ON_BN_CLICKED(IDC_BUTTON_CHECK, &CMFC_ControlerDlg::OnBnClickedButtonCheck)
+	ON_BN_CLICKED(IDC_BTN_MUTI_EDIT, &CMFC_ControlerDlg::OnBnClickedBtnMutiEdit)
+	ON_BN_CLICKED(IDC_BTN_TIME_AXIS_CTRL, &CMFC_ControlerDlg::OnBnClickedBtnTimeAxisCtrl)
 END_MESSAGE_MAP()
 
 
@@ -103,6 +111,9 @@ void CMFC_ControlerDlg::InitChildDlg()
 	m_DlgRadio.Create(IDD_DLG_RADIO, this);
 	m_DlgComboBox.Create(IDD_DLG_COMBOBOX, this);
 	m_DlgTree.Create(IDD_DLG_TREE, this);
+	m_DlgScrollBar.Create(IDD_DLG_SCROLLBAR, this);
+	m_DlgMeta.Create(IDD_DLG_META, this);
+	m_DlgCheckBox.Create(IDD_DLG_CHECKBOX, this);
 }
 
 void CMFC_ControlerDlg::OnBnClickedButtonEdit()
@@ -126,4 +137,38 @@ void CMFC_ControlerDlg::OnBnClickedButtonCombobox()
 void CMFC_ControlerDlg::OnBnClickedButtonTree()
 {
 	m_DlgTree.ShowWindow(SW_SHOW);
+}
+
+
+void CMFC_ControlerDlg::OnBnClickedButtonScrollbar()
+{
+	m_DlgScrollBar.ShowWindow(SW_SHOW);
+}
+
+
+void CMFC_ControlerDlg::OnBnClickedButtonMeta()
+{
+	//m_DlgMeta.ShowWindow(SW_SHOW);
+	CDlgMeta dlg;
+	dlg.DoModal();
+}
+
+
+void CMFC_ControlerDlg::OnBnClickedButtonCheck()
+{
+	m_DlgCheckBox.ShowWindow(SW_SHOW);
+}
+
+
+void CMFC_ControlerDlg::OnBnClickedBtnMutiEdit()
+{
+	CDlgMutiEdit dlg;
+	dlg.DoModal();
+}
+
+
+void CMFC_ControlerDlg::OnBnClickedBtnTimeAxisCtrl()
+{
+	CDlgTimeAxisCtrl dlg;
+	dlg.DoModal();
 }

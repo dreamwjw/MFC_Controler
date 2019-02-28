@@ -9,6 +9,9 @@
 #include "DlgRadio.h"
 #include "DlgComboBox.h"
 #include "DlgTree.h"
+#include "DlgScrollBar.h"
+#include "DlgMeta.h"
+#include "DlgCheckBox.h"
 
 // CMFC_ControlerDlg ¶Ô»°¿ò
 class CMFC_ControlerDlg : public CDialogEx
@@ -40,6 +43,9 @@ private:
 	CDlgRadio m_DlgRadio;
 	CDlgComboBox m_DlgComboBox;
 	CDlgTree m_DlgTree;
+	CDlgScrollBar m_DlgScrollBar;
+	CDlgMeta m_DlgMeta;
+	CDlgCheckBox m_DlgCheckBox;
 
 private:
 	void InitChildDlg();
@@ -50,4 +56,9 @@ public:
 	afx_msg void OnBnClickedButtonRadio();
 	afx_msg void OnBnClickedButtonCombobox();
 	afx_msg void OnBnClickedButtonTree();
+	afx_msg void OnBnClickedButtonScrollbar();
+	afx_msg void OnBnClickedButtonMeta();
+	afx_msg void OnBnClickedButtonCheck();
+	afx_msg void OnBnClickedBtnMutiEdit();
+	afx_msg void OnBnClickedBtnTimeAxisCtrl();
 };
